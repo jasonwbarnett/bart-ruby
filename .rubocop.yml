@@ -1,0 +1,10 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+Metrics/LineLength:
+  Max: 100
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
