@@ -17,28 +17,22 @@ class Bart
       end
     end
 
-    def self.departures
+    def self.etd(origin: "ALL", platform: nil, direction: nil)
       res = conn.get do |req|
         req.url "/api/etd.aspx"
         req.params["cmd"] = "etd"
-        req.params["orig"] = abbreviation
+        req.params["orig"] = origin
+        req.params["plat"] = platform if platform
+        req.params["dir"] = direction if direction
       end
 
       case res.status
       when 200
-        res
-      end
-    end
-
-    def self.get(url:, params: {})
-      res = conn.get do |req|
-        req.url url
-        req.params.merge!(params)
-      end
-
-      case res.status
-      when 200
-        res
+        if origin == "ALL"
+          res.body["root"]["station"]
+        else
+          res.body["root"]["station"].first["etd"]
+        end
       end
     end
 
