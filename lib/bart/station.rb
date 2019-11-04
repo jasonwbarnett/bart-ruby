@@ -28,14 +28,6 @@ class Bart
     end
 
     def realtime_estimates(platform: nil, direction: nil)
-      # {"minutes"=>"13",
-      #  "platform"=>"1",
-      #  "direction"=>"North",
-      #  "length"=>"10",
-      #  "color"=>"YELLOW",
-      #  "hexcolor"=>"#ffff33",
-      #  "bikeflag"=>"1",
-      #  "delay"=>"0"}
       Bart::API.etd(origin: abbreviation,
                     platform: platform,
                     direction: direction).each_with_object([]) do |etd, estimates|
