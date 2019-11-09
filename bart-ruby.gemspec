@@ -22,10 +22,10 @@ Gem::Specification.new do |s|
   s.add_dependency "faraday", "~> 0.9"
   s.add_dependency "faraday_middleware", "~> 0.8"
 
-  s.add_development_dependency "guard"
-  s.add_development_dependency "guard-rspec"
-  s.add_development_dependency "guard-rubocop"
-  s.add_development_dependency "rubocop"
-  s.add_development_dependency "rubocop-performance"
-  s.add_development_dependency "rubocop-rspec"
+  s.add_development_dependency "guard", "~> 2.1"
+  s.add_development_dependency "guard-rspec", "~> 4.0"
+  s.add_development_dependency "guard-rubocop", "~> 1.0"
+  s.add_development_dependency "rubocop", "~> 0.71"
+  s.add_development_dependency "rubocop-performance", "~> 1.5"
+  s.add_development_dependency "rubocop-rspec", "~> 1.36"
 end
